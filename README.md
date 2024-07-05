@@ -5,7 +5,10 @@ This project contains some useful processes that could make setting up a worksho
 At the moment adding a user to an organization is a bit of a pain since you have to do it one by one. So i've created two new methods od adding users to an organization in bulk. 
 
 #### Install and Setup
-To access the API you'll need to create some credentials you'll need a `client_id` and `client_secret` it's easy to create those - [Follow the instructions here](https://docs.camunda.io/docs/apis-tools/administration-api/authentication/#client-credentials-and-scopes)
+You’ll need a Camunda 8 Cluster (the easiest place to do that is[ Camunda SaaS](http://camunda.io/)). Then the fun can start!
+Upload the bpmn models and the forms from their respective folders and add them to your Camunda 8 account. From the modeler you can deploy the processes to a cluster.
+
+Before starting and instance you'll need to get access the API. To create some credentials you'll need a `client_id` and `client_secret` it's easy to create those - [Follow the instructions here](https://docs.camunda.io/docs/apis-tools/administration-api/authentication/#client-credentials-and-scopes)
 
 You then need to use the `client_id` and `client_secret` to create an `access_token` (this is also detailed in the above link).
 
@@ -17,8 +20,6 @@ the secrets you create need to be named as follows
 `CamundaClientID` = `client_id`
 
 `CamundaAPIToken` = `access_token`
-
-
 
 #### Give users a link which signs them up
 This is very useful for a scenario where you need to get a room full of people to sign up to a single Camunda Org in order to run a workshop. But you're not sure how many people there are and you don't have their email addresses. 
