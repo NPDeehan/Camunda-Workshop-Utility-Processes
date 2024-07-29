@@ -8,11 +8,11 @@ At the moment adding a user to an organization is a bit of a pain since you have
 You’ll need a Camunda 8 Cluster (the easiest place to do that is[ Camunda SaaS](http://camunda.io/)). Then the fun can start!
 Upload the bpmn models and the forms from their respective folders and add them to your Camunda 8 account. From the modeler you can deploy the processes to a cluster.
 
-Before starting and instance you'll need to get access the API. To create some credentials you'll need a `client_id` and `client_secret` it's easy to create those - [Follow the instructions here](https://docs.camunda.io/docs/apis-tools/administration-api/authentication/#client-credentials-and-scopes)
+Before starting and instance you'll need to get access the API. To create some credentials you'll need a `client_id` and `client_secret` it's easy to create those - [Follow the instructions here](https://docs.camunda.io/docs/apis-tools/administration-api/authentication/#client-credentials-and-scopes). When creating the client credentials select just the `Members` tickbox. 
 
-You then need to use the `client_id` and `client_secret` to create an `access_token` (this is also detailed in the above link).
+You then need to  use the `client_id` and `client_secret` to create an `access_token` (this is also detailed in the above link).
 
-Once you have them you need to add them as[ connector secrets](https://docs.camunda.io/docs/components/console/manage-clusters/manage-secrets/) to the cluster in your organization you'll be running the processes from. 
+Once you have them navigate your way to the cluster that you've deployed your models to. You need to add them as[ connector secrets](https://docs.camunda.io/docs/components/console/manage-clusters/manage-secrets/) to the cluster in your organization you'll be running the processes from. 
 the secrets you create need to be named as follows
 
 `CamundaClientSecret` = `client_secret`
@@ -20,6 +20,8 @@ the secrets you create need to be named as follows
 `CamundaClientID` = `client_id`
 
 `CamundaAPIToken` = `access_token`
+
+Now you're all set, you should be able to run the process and it should create a user for you.
 
 #### Give users a link which signs them up
 This is very useful for a scenario where you need to get a room full of people to sign up to a single Camunda Org in order to run a workshop. But you're not sure how many people there are and you don't have their email addresses. 
